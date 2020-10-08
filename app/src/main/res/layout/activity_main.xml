@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/article_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:padding="@dimen/padding_regular"
+        android:text="@string/article_title"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/article_heading">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+            android:id="@+id/article_subheading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_regular"
+            android:text="@string/article_subtitle"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault" />
+
+            <TextView
+                android:id="@+id/article"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:lineSpacingExtra="@dimen/line_spacing"
+                android:padding="@dimen/padding_regular"
+                android:text="@string/article_text" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/comment_button"
+                android:text="Add Comment"/>
+
+            <!-- autoLink This enables links to work in textview -->
+            <!-- how ScrollView encompases the text pane -->
+            <!-- adding a LinearLayout enables you to include subheadings to the scroll view
+            delete linear Layour of you do not like this -->
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
+
+
+    <!-- By ALT + Enter you are able to bind the xml attributes to a seperate value xml file.
+    This enables the attributes to be cordinated across views while allowing editing of text all from one
+    xml file. You would find this by going to res/values/strings.xml -->
+
+
+    <!-- In a real app that accesses magazine or newspaper articles,
+    the articles that appear would probably come from an online source through a content provider,
+     or might be saved in advance in a database on the device.
+     For this practical, you will create the article as a single long string in the strings.xml resource.
+     -->
